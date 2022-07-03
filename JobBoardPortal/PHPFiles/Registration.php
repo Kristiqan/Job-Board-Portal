@@ -1,8 +1,8 @@
 <pre>
 <?php
-$successfulReg=0;
-$UserExists=0;
-$EmailExists=0;
+$successfulReg=false;
+$UserExists=false;
+$EmailExists=false;
 
 require 'db.php'; 
 
@@ -30,7 +30,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
            $results = mysqli_query($con, $query);
            if($results)
            {
-                $successfulReg=1;
+                $successfulReg=true;
            }
           
   	}
@@ -63,7 +63,7 @@ if($UserExists)
 if($successfulReg)
 {
     echo '<div class="alert alert-success" role="alert">
-    Registration Successful! You can login from <a href="Login.php">here</a>!
+    Registration Successful! You can login from <a href="Login.php">here</a>
   </div>';
 }
 

@@ -1,7 +1,7 @@
 <pre>
 <?php
    
-  $InvalidLogin =0;
+  $InvalidLogin = false;
 
    require 'db.php';  
    session_start();
@@ -19,11 +19,9 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 
   	if (mysqli_num_rows($res_u) == 1 && mysqli_num_rows($res_e) == 1) {
       $_SESSION["Email"] = $email;
-
-
-            header("Location: Edits.php");
+      header("Location: Edits.php");
   	}else{
-  	  $InvalidLogin =1;
+  	  $InvalidLogin = true;
   	}
       
   	

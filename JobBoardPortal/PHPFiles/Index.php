@@ -1,3 +1,11 @@
+<?php
+     require 'db.php'; 
+
+  $sql = "SELECT * FROM submissionform ORDER BY id DESC";
+   $result = mysqli_query($con, $sql);
+   
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +20,11 @@
 	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<ul class="nav nav-tabs navbar-light justify-content-end ">
+<ul class="nav nav-tabs justify-content-end ">
+<div class="container justify-content-start mt-1 mb-1  d-flex">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-primary" type="submit">Search</button>
+</div>
   <li class="nav-item">
     <a class="nav-link" href="Login.php">Log in</a>
 	<li class="nav-item">
@@ -24,52 +36,37 @@
 		<header class="site-header">
 			<h1 class="site-title"><a href="#">Job Offers</a></h1>
 		</header>
-
-		<ul class="jobs-listing">
-			<li class="job-card">
-				<div class="job-primary">
-					<h2 class="job-title"><a href="#">Front End Developer</a></h2>
-					<div class="job-meta">
-						<a class="meta-company" href="#">Company Awesome Ltd.</a>
-						<span class="meta-date">Posted 14 days ago</span>
-					</div>
-					<div class="job-details">
-						<span class="job-location">The Hague (The Netherlands)</span>
-						<span class="job-type">Contract staff</span>
-					</div>
-				</div>
-				<div class="job-logo">
-					<div class="job-logo-box">
-						<img src="https://i.imgur.com/ZbILm3F.png" alt="">
-					</div>
-				</div>
-			</li>
-
-			<li class="job-card">
-				<div class="job-primary">
-					<h2 class="job-title"><a href="#">Front End Developer</a></h2>
-					<div class="job-meta">
-						<a class="meta-company" href="#">Company Awesome Ltd.</a>
-						<span class="meta-date">Posted 14 days ago</span>
-					</div>
-					<div class="job-details">
-						<span class="job-location">The Hague (The Netherlands)</span>
-						<span class="job-type">Contract staff</span>
-					</div>
-				</div>
-				<div class="job-logo">
-					<div class="job-logo-box">
-						<img src="https://i.imgur.com/ZbILm3F.png" alt="">
-					</div>
-				</div>
-			</li>
-		</ul>
+      
 		
+<?php 
+ while($row = mysqli_fetch_assoc($result)) {
+	
+?>
+<ul class="jobs-listing">
+			<li class="job-card">
+				<div class="job-primary">
+					<h2 class="job-title"><a href="MoreInfoJobsub.php?Id=<?php echo $row["Id"] ?>"> <?php echo $row["Title"]; ?> </a></h2>
+					<div class="job-meta">
+						<p class="meta-company"><?php echo $row["Company"];  ?></p>
+						<span class="meta-date">Click On Offer For More Info </span>
+					</div>
+					<div class="job-details">
+						<span class="job-location"> Salary: <?php echo $row["Salary_field"]; ?></span>
+						<span class="job-type">Contract Company</span>
+					</div>
+				</div>
+				<div class="job-logo">
+					<div class="job-logo-box">
+						<img src="https://i.imgur.com/ZbILm3F.png" alt="">
+					</div>
+				</div>
+			</li>
+		<?php
+		}
+		?>
+		<a class="btn btn-primary mt-5" href="AddJobSub.php" role="button">Add New Job Offer</a>
 		<footer class="site-footer">
-			<p>Copyright 2020 | Developer links: 
-				<a href="Edits.php">Edits</a>,
-				<a href="Index.php">Home</a>,
-				<a href="Jobs.php">Jobs</a>
+			<p>Copyright 2020 | 
 			</p>
 		</footer>
 	</div>
