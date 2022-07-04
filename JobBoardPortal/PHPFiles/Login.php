@@ -19,7 +19,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 
   	if (mysqli_num_rows($res_u) == 1 && mysqli_num_rows($res_e) == 1) {
       $_SESSION["Email"] = $email;
-      header("Location: Edits.php");
+      header("Location: AdminPage.php");
   	}else{
   	  $InvalidLogin = true;
   	}

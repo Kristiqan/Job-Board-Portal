@@ -3,7 +3,7 @@
 
   $sql = "SELECT * FROM submissionform";
   $aid=intval($_GET['Id']);
-  $result=mysqli_query($con,"SELECT Id, Title, Description, Company , Salary_field   FROM submissionform WHERE Id='$aid'");
+  $result=mysqli_query($con,"SELECT Id, Title, Description, Company , Salary_field  FROM submissionform WHERE Id='$aid'");
 ?>
 
 
@@ -23,7 +23,7 @@
 <body>
 	<div class="site-wrapper">
 		<header class="site-header">
-			<h2 class="site-title"><a href="Index.php">Job Offers</a></h2>
+			<h2 class="site-title"><a href="#">Job Offers</a></h2>
 		</header>
 		<?php 
         while($row = mysqli_fetch_assoc($result)) {
@@ -37,25 +37,21 @@
 						<header class="job-header">
 							<h2 class="job-title"><a href="#"><?php echo $row["Title"]; ?></a></h2>
 							<div class="job-meta">
-								<a class="meta-company" href="#"><?php echo $row["Company"]; ?></a>
+								<p class="meta-company" href="#"><?php echo $row["Company"]; ?></p>
 							</div>
 							<div class="job-details">
-								<span class="job-location">Salary: <?php echo $row["Salary_field"];?></span>
-								<span class="job-type">Contract Company</span>
+								<span class="job-location">Salary: <?php echo $row["Salary_field"];?> lv/month</span>
+								<span class="job-type">Contract Company For More Information</span>
 							</div>
 						</header>
 						<div class="job-body">
+							<h3>Job Description: </h3>
 							<p><?php echo $row["Description"]; ?></p>
 						</div>
 					</div>
 				</div>
 			</main>
 			<aside class="job-secondary">
-				<div class="job-logo">
-					<div class="job-logo-box">
-						<img src="https://i.imgur.com/ZbILm3F.png" alt="">
-					</div>
-				</div>
 				<a href="Index.php" class="button button-wide">Go Back</a>
 			</aside>
 		</div>
@@ -64,7 +60,7 @@
 	
 		?>
 		<footer class="site-footer">
-			<p>Copyright 2020 | 
+			<p>Copyright 2022 | Kristiyan Stefanov
 				
 			</p>
 		</footer>
