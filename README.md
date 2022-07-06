@@ -1,4 +1,4 @@
-# Job Board Portal Website
+# Job Board Portal Website [Link To The Project Requirements](https://docs.google.com/document/d/1AfxGLqgvx57wpi1tm9PZcHWQasRj0hhu0dHf5GW1340/edit#)
 
 ## Requirements 
                                                                                                      
