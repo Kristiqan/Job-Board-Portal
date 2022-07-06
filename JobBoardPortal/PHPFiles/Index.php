@@ -1,9 +1,28 @@
 <?php
      require 'db.php'; 
+	 $limit = 5;  
+    $sql = "SELECT * FROM submissionform ORDER BY id DESC";
+    $result = mysqli_query($con, $sql);
+    $total_records = mysqli_num_rows($result);
+    $total_pages = ceil($total_records / $limit);
+	if (!isset ($_GET['page']) ) {  
 
-  $sql = "SELECT * FROM submissionform ORDER BY id DESC";
-   $result = mysqli_query($con, $sql);
-   
+        $page_number = 1;  
+
+    } else {  
+
+        $page_number = $_GET['page'];  
+
+    }    
+	$start = ($page_number - 1) * $limit;
+	$getQuery = "SELECT *FROM submissionform LIMIT " . $start . ',' . $limit;  
+	$result = mysqli_query($con, $getQuery);
+	 
+    
+    $sql = "SELECT * FROM submissionform ORDER BY id DESC LIMIT $start, $limit";
+    $result = mysqli_query($con, $sql);
+
+ 
    
    
 ?>
@@ -54,18 +73,25 @@
 						<span class="job-type">Contact Company For More Information</span>
 					</div>
 				</div>
-				<div class="job-logo">
-					<div class="job-logo-box">
-						<img src="../images/logo.png" alt="">
-					</div>
-				</div>
 			</li>
 		</ul>
 		
-    
 		<?php
 		}
 		?>
+		
+		<div class= "jobs-pagination-wrapper">
+		<div class="nav-links">
+		<a class="page-pagination"> <a href = "index.php?page=page_number=1 > </a></a>
+		<a class="page-pagination"> <a href = "index.php?page=<?php if($page_number!=1){echo $page_number-1;}else{echo $page_number;} ?>">Prev </a></a>
+		<a class="page-pagination"> <a href = "index.php?page=<?php if($page_number!=$total_pages){echo $page_number+1;}else{echo $page_number;} ?>" >Next </a></a>
+		<a class="page-pagination"> <a href = "index.php?page=<?php echo $total_pages; ?>">Last </a></a>
+		</div>
+
+		</div>
+		
+		
+		
 		<a class="btn btn-primary mt-5" href="AddJobSub.php" role="button">Add A New Job Offer</a>
 		<footer class="site-footer">
 			<p>Copyright 2022 | Kristiyan Stefanov
