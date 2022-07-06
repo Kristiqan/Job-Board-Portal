@@ -5,8 +5,6 @@ include("Auth-Session.php");
 
   $sql = "SELECT * FROM submissionform ORDER BY id DESC";
    $result = mysqli_query($con, $sql);
-   
-   
 
 ?>
 <!DOCTYPE html>
@@ -15,7 +13,7 @@ include("Auth-Session.php");
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Jobs</title>
+	<title>AdminPage</title>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link rel="stylesheet" href="../Bootstrap-5.1.3/css/bootstrap.min.css">
     <script src="../Bootstrap-5.1.3/js/bootstrap.min.js"></script>
@@ -44,7 +42,7 @@ include("Auth-Session.php");
   <h4 class="alert-heading">WARNING</h4>
   <p>This page is intended for Editing job offers by administrators</p>
   <hr>
-  <p class="mb-0">If you are not an administrator or you got here by accident please Press the <b>Log Out</b> button at the top right corner and contact the owner of the site.</p>
+  <p class="mb-0">If you are not an administrator or you got here by accident please Press the <b>Log Out</b> button at the top right corner and contact the owner of the website.</p>
 </div>
 </div>
 

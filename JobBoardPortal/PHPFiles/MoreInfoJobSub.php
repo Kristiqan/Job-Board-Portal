@@ -27,8 +27,6 @@
 		</header>
 		<?php 
         while($row = mysqli_fetch_assoc($result)) {
-			
-
         ?>
 		<div class="job-single">
 			<main class="job-main">
@@ -57,7 +55,6 @@
 		</div>
 		<?php
 		}
-	
 		?>
 		<footer class="site-footer">
 			<p>Copyright 2022 | Kristiyan Stefanov

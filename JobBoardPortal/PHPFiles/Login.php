@@ -10,6 +10,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
    
    $email=$_POST['Email'];
    $password=$_POST['Password'];
+   
 
 
     $sql_u = "SELECT * FROM registration WHERE Email='$email'";
@@ -23,7 +24,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
   	}else{
   	  $InvalidLogin = true;
   	}
-      
+    
   	
   }
 

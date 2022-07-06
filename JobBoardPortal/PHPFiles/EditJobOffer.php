@@ -41,20 +41,20 @@
 <form action="" method="POST">
   <div class="mb-3">
     <input type="hidden" name="Id" class="form-control" value="<?php echo $row['Id']; ?> >
-    <label for="exampleInputEmail1" class="form-label">Title</label>
+    <label for="exampleInputEmail1" class="form-label">Edit Title</label>
     <input type="text" class="form-control" name="Title" value="<?php echo isset($row['Title']) ? $row['Title'] : '';?>" placeholder="Job Position">
   </div>
-  <label  class="form-label">Job Discription</label>
+  <label  class="form-label">Edit Job Discription</label>
   <div class="form-floating">
   <textarea class="form-control" name="Description" placeholder="Our Company Is The Best And Here is why" style="height: 200px"> <?php echo $row["Description"]; ?> </textarea>
   <label for="floatingTextarea2">Our Company Is The Best And Here Is Why</label>
 </div>
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Company Name</label>
+    <label for="exampleInputEmail1" class="form-label">Edit Company Name</label>
     <input type="text" class="form-control" name="Company" placeholder="Apple, Amazon etc." value="<?php echo isset($row['Company']) ? $row['Company'] : '';?>" >
   </div>
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Salary</label>
+    <label for="exampleInputEmail1" class="form-label">Edit Salary</label>
     <input type="text" class="form-control" name="Salary" placeholder="How Much Is Your Company Willing To Pay?" value="<?php echo isset($row['Salary_field']) ? $row['Salary_field'] : '';?>" >
   </div>
   <div class="text-center">

@@ -1,9 +1,9 @@
 <?php
      require 'db.php'; 
 
-
   $sql = "SELECT * FROM submissionform ORDER BY id DESC";
    $result = mysqli_query($con, $sql);
+   
    
    
 ?>
@@ -22,11 +22,7 @@
 </head>
 <body>
 <ul class="nav nav-tabs justify-content-end ">
-	
 <div class="container  mt-1 mb-1  d-flex " >
-      <input class="form-control me-2" name="Searchterm" type="search"  placeholder="Search" >
-      <button class="btn btn-primary" type="submit">Search</button>
-
 </div>
   <li class="nav-item">
     <a class="nav-link" href="Login.php">Log in</a>
@@ -58,7 +54,15 @@
 						<span class="job-type">Contact Company For More Information</span>
 					</div>
 				</div>
+				<div class="job-logo">
+					<div class="job-logo-box">
+						<img src="../images/logo.png" alt="">
+					</div>
+				</div>
 			</li>
+		</ul>
+		
+    
 		<?php
 		}
 		?>
