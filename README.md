@@ -26,6 +26,6 @@
 
 - MoreInfoJobSub.php If You Click On The Title Of An Offer You Can See More Information About It.
 
-## There Is A Admin Page With Edit And Delete Functionality And A Few More Pages
+## There Is A Admin Page With Edit And Delete Functionality,Page Pagination And A Few More Pages
 
 
